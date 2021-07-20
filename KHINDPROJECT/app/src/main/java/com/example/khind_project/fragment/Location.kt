@@ -6,13 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.khind_project.R
-import kotlinx.android.synthetic.main.fragment_alert.*
-
-class Alert : Fragment() {
+class Location : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -20,11 +17,11 @@ class Alert : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_alert, container, false)
+        return inflater.inflate(R.layout.fragment_location, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        text1.text = "Alert"
+
     }
 }
