@@ -22,4 +22,7 @@
     <color name="yellow">#FFFF00</color>
     <color name="fuchsia">#FF00FF</color>
     <color name="silver">#C0C0C0</color>
+    <color name="clear">#9DD31C</color>
+    <color name="warning">#FE9700</color>
+    <color name="alert">#FF0000</color>
 </resources>
