@@ -9,7 +9,7 @@ import android.widget.ListView
 import com.example.khind_project.R
 
 class Message : Fragment() {
-
+    private lateinit var listViewMessage: ListView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -21,9 +21,14 @@ class Message : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val listViewMessage = view.findViewById<ListView>(R.id.list_message)
-        val List = mutableListOf<MessageModel>()
-        List.add(MessageModel("04 Sep, 11:08AM","BROADCAST MESSAGE TITLE","Push notification message here is very long..."))
-        listViewMessage.adapter = MessageAdapter(requireContext(),R.layout.row_message,List)
+        listViewMessage = view.findViewById(R.id.list_message)
+
+        val List_message = mutableListOf<MessageModel>()
+        List_message.add(MessageModel("04 Sep, 11:08AM","BROADCAST MESSAGE TITLE","Push notification message here is very long..."))
+        listViewMessage.adapter = MessageAdapter(requireContext(),R.layout.row_message,List_message)
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 }

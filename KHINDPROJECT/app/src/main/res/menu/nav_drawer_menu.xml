@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/menu_top">
+
+        <item
+            android:id="@+id/dashboard"
+            android:title="Dashboard"
+            />
+
+        <item
+            android:id="@+id/notice"
+            android:title="Notification"/>
+
+    </group>
+
+    <group
+        android:id="@+id/menu_bottom">
+
+        <item
+            android:id="@+id/myprofile"
+            android:title="My Profile"/>
+
+        <item
+            android:id="@+id/setting"
+            android:title="Setting"/>
+
+        <item
+            android:id="@+id/support"
+            android:title="Support"/>
+
+    </group>
+
+</menu>

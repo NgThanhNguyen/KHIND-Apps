@@ -37,7 +37,23 @@ class Notification : Fragment() {
         viewPage = view.findViewById(R.id.viewPager)
         tabLayout = view.findViewById(R.id.tabs)
 
-        val adapterViewPager = MyViewPagerAdapter(getChildFragmentManager())
+        val adapterViewPager = MyViewPagerAdapter(requireFragmentManager())
+        adapterViewPager.addFragment(Message(),"Messages")
+        adapterViewPager.addFragment(Alert(),"Alerts")
+        viewPage.adapter = adapterViewPager
+        tabLayout.setupWithViewPager(viewPage)
+
+
+        backBtn.setOnClickListener {
+            if(fragmentManager?.backStackEntryCount!! > 0) {
+                fragmentManager?.popBackStack("Notification", FragmentManager.POP_BACK_STACK_INCLUSIVE)
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val adapterViewPager = MyViewPagerAdapter(requireFragmentManager())
         adapterViewPager.addFragment(Message(),"Messages")
         adapterViewPager.addFragment(Alert(),"Alerts")
         viewPage.adapter = adapterViewPager
@@ -49,5 +65,6 @@ class Notification : Fragment() {
                 fragmentManager?.popBackStack("Home", FragmentManager.POP_BACK_STACK_INCLUSIVE)
             }
         }
+
     }
 }

@@ -31,7 +31,7 @@
             tools:ignore="MissingConstraints"/>
 
         <Button
-            android:id="@+id/backbutton"
+            android:id="@+id/backbutton_detail"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
@@ -41,20 +41,55 @@
             tools:ignore="MissingConstraints"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <View
+        android:id="@+id/line_divide"
+        app:layout_constraintTop_toBottomOf="@+id/constraint1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/silver"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/constraint1"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/line_divide"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingEnd="30dp">
 
         <TextView
+            android:id="@+id/time_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="22sp"
+            android:textSize="14sp"
             android:textStyle="bold"
+            android:text="04 Sep, 11:08AM"
+            android:textColor="@color/pale_black"
             android:padding="10dp"
-            tools:ignore="MissingConstraints">
-        </TextView>
+            tools:ignore="MissingConstraints"/>
+
+        <TextView
+            android:id="@+id/detail1"
+            app:layout_constraintTop_toBottomOf="@id/time_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:textColor="@color/pale_black"
+            android:text="AUTE SINT ET VENIAM EX DESERUNT NULLA LOREM ALIQUA "/>
+
+        <TextView
+            android:id="@+id/detail2"
+            app:layout_constraintTop_toBottomOf="@id/detail1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="10dp"
+            android:textColor="@color/pale_black"
+            android:text="Aute sint et veniam ex deserunt nulla Lorem aliqua minim. In adipisicing magna anim cupidatat quis nulla consectetur fugiat. Laborum sint fugiat elit ullamco nostrud. Labore officia in cupidatat sunt culpa occaecat aute in esse aliquip ad dolore aute. Nulla ex ad et laboris tempor anim. Enim voluptate incididunt non esse qui sunt consectetur excepteur amet eiusmod adipisicing magna irure veniam.
+Culpa labore cupidatat incididunt culpa sit. Qui cillum non enim labore esse sunt id deserunt quis ea non aliqua proident laboris. Laborum culpa ex commodo esse tempor eu aliquip Lorem excepteur labore. Ullamco esse esse ea cillum. Non voluptate minim laboris esse dolor amet."/>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -5,7 +5,7 @@
     android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Activity_2_Fragment.Mainscreen.Orange">
+    tools:context=".fragment.Activity_2_Fragment.Mainscreen.status.Orange">
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView

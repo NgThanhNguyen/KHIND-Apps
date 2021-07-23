@@ -65,7 +65,8 @@
             android:padding="15dp"
             android:textAlignment="viewStart"
             android:hint="e.g. user@gmail.com"
-            android:maxLines="1">
+            android:maxLines="1"
+            android:text="vinova+6@vinova.com.sg">
         </EditText>
 
         <TextView
@@ -88,7 +89,8 @@
             android:padding="15dp"
             android:textAlignment="viewStart"
             android:hint="enter password"
-            android:maxLines="1">
+            android:maxLines="1"
+            android:text="vinova123">
         </EditText>
 
         <Button

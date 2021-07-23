@@ -13,6 +13,7 @@ import com.example.khind_project.fragment.Activity_2_Fragment.Notification.Detai
 import com.example.khind_project.fragment.Activity_2_Fragment.Notification.message.MessageModel
 
 class Alert : Fragment() {
+    lateinit var listViewAlert: ListView
     lateinit var detailBtn: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,11 +30,11 @@ class Alert : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val listViewAlert = view.findViewById<ListView>(R.id.list_alert)
-        val List = mutableListOf<AlertModel>()
-        List.add(AlertModel("04 Sep, 11:08AM","BROADCAST MESSAGE TITLE","Push notification message here is very long..."))
-        List.add(AlertModel("04 Sep, 11:22AM","BROADCAST MESSAGE TITLE","Push notification message"))
-        listViewAlert.adapter = AlertAdapter(requireContext(),R.layout.row_alert,List)
+        listViewAlert = view.findViewById(R.id.list_alert)
+        val List_alert = mutableListOf<AlertModel>()
+        List_alert.add(AlertModel("04 Sep, 11:08AM","BROADCAST MESSAGE TITLE","Push notification message here is very long..."))
+        List_alert.add(AlertModel("04 Sep, 11:22AM","BROADCAST MESSAGE TITLE","Push notification message"))
+        listViewAlert.adapter = AlertAdapter(requireContext(),R.layout.row_alert,List_alert)
 
         listViewAlert.isClickable = true
 
@@ -44,9 +45,13 @@ class Alert : Fragment() {
             }
             val transaction = fragmentManager?.beginTransaction()?.apply {
                 replace(R.id.fragmentContainer2, Details())
-                addToBackStack("Alert")
+                addToBackStack("Details")
                 commit()
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 }
