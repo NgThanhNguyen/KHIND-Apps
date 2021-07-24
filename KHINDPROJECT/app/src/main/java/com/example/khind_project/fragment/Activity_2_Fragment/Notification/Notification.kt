@@ -62,7 +62,7 @@ class Notification : Fragment() {
 
         backBtn.setOnClickListener {
             if(fragmentManager?.backStackEntryCount!! > 0) {
-                fragmentManager?.popBackStack("Home", FragmentManager.POP_BACK_STACK_INCLUSIVE)
+                fragmentManager?.popBackStack("Notification", FragmentManager.POP_BACK_STACK_INCLUSIVE)
             }
         }
 

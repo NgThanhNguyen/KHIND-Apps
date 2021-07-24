@@ -15,6 +15,7 @@
         android:minHeight="?attr/actionBarSize">
 
         <TextView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
@@ -23,12 +24,24 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:id="@+id/toolbar_title"/>
+
+        <Button
+            android:id="@+id/notification"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/ic_baseline_notifications_24"
+            android:layout_gravity="right"
+            >
+        </Button>
     </androidx.appcompat.widget.Toolbar>
 
     <View
+        android:id="@+id/divide_line1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/silver"
         app:layout_constraintTop_toBottomOf="@id/toolbar"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
