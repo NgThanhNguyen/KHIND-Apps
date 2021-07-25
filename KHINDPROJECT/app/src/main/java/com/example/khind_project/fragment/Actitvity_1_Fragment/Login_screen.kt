@@ -33,13 +33,25 @@ class Login_screen : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        SensorViewModel.getSensorInfo(SharePrefRepository.getToken())?.observe(viewLifecycleOwner, {
+        SensorViewModel.getInfo(SharePrefRepository.getToken())
+
+        SensorViewModel.getSensorInfo()?.observe(viewLifecycleOwner, {
             if(it.status) {
                 SharePrefRepository.putAlarm(it.data[0].alarm)
+                SharePrefRepository.putSensorId(it.data[0].id)
                 activity?.let {
                     val intent = Intent(it,SecondActivity::class.java)
                     it.startActivity(intent)
                 }
+
+//                SensorViewModel.getData(SharePrefRepository.getToken(),SharePrefRepository.getSensorId())
+//
+//                SensorViewModel.getSensorData()?.observe(viewLifecycleOwner, {
+//                    if(it.status) {
+//                        SharePrefRepository.putLongitude(it.data.longitude.toFloat())
+//                        SharePrefRepository.putLatitude(it.data.latitude.toFloat())
+//                    }
+//                })
             }
             else {
                 Toast.makeText(this.context,"Failed to get sensor info", Toast.LENGTH_LONG).show()

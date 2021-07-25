@@ -22,10 +22,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ActivityViewModels(): ViewModel() {
-    var authorizeViewModel: MutableLiveData<AuthorizeRespond>? = MutableLiveData<AuthorizeRespond>()
-    var refreshViewModel: MutableLiveData<RefreshRespond>? = MutableLiveData<RefreshRespond>()
-    var sensorViewModel: MutableLiveData<SensorRespond>? = MutableLiveData<SensorRespond>()
-    var sensorDetailViewModel: MutableLiveData<SensorDetailRespond>? = MutableLiveData<SensorDetailRespond>()
+    private var authorizeViewModel: MutableLiveData<AuthorizeRespond>? = MutableLiveData<AuthorizeRespond>()
+    private var refreshViewModel: MutableLiveData<RefreshRespond>? = MutableLiveData<RefreshRespond>()
+    private var sensorViewModel: MutableLiveData<SensorRespond>? = MutableLiveData<SensorRespond>()
+    private var sensorDetailViewModel: MutableLiveData<SensorDetailRespond>? = MutableLiveData<SensorDetailRespond>()
 
     fun init(): ApiRequest {
         return Retrofit.Builder()
@@ -161,23 +161,19 @@ class ActivityViewModels(): ViewModel() {
         })
     }
 
-    fun signIn(username: String, pass: String): LiveData<AuthorizeRespond>? {
-    getToken(username,pass)
-    return authorizeViewModel
+    fun signIn(): LiveData<AuthorizeRespond>? {
+        return authorizeViewModel
     }
 
-    fun refresh(Token: String, RefreshToken: String): LiveData<RefreshRespond>? {
-        Refresh(Token,RefreshToken)
+    fun refresh(): LiveData<RefreshRespond>? {
         return refreshViewModel
     }
 
-    fun getSensorInfo(Token: String): LiveData<SensorRespond>? {
-        getInfo(Token)
+    fun getSensorInfo(): LiveData<SensorRespond>? {
         return sensorViewModel
     }
 
-    fun getSensorData(Token: String, ID: String): LiveData<SensorDetailRespond>? {
-        getData(Token, ID)
+    fun getSensorData(): LiveData<SensorDetailRespond>? {
         return sensorDetailViewModel
     }
 }

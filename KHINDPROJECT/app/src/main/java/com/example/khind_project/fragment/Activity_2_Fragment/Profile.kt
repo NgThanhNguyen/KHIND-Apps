@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.example.khind_project.R
+import kotlinx.android.synthetic.main.toolbar.*
+
 class Profile : Fragment() {
     lateinit var changePassWord: Button
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +23,9 @@ class Profile : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.nav_bar?.visibility = View.GONE
+        activity?.location_constraint?.visibility = View.GONE
+
         changePassWord = view.findViewById(R.id.change_password_button)
 
         changePassWord.setOnClickListener {

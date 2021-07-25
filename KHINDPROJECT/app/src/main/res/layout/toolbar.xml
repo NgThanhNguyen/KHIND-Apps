@@ -1,47 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:fitsSystemWindows="true"
-        android:minHeight="?attr/actionBarSize">
+        android:layout_height="?attr/actionBarSize"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        tools:ignore="MissingConstraints">
 
         <TextView
-
+            android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/pale_black"
             android:text="Dashboard"
-            android:layout_gravity="center"
+            android:textColor="@color/pale_black"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:id="@+id/toolbar_title"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/notification"
+            android:id="@+id/noti"
             android:layout_width="40dp"
             android:layout_height="35dp"
-            android:backgroundTint="@color/white"
             android:background="@drawable/ic_baseline_notifications_24"
-            android:layout_gravity="right"
-            >
-        </Button>
-    </androidx.appcompat.widget.Toolbar>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <Button
+            android:id="@+id/nav_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/ic_baseline_view_headline_24"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
-        android:id="@+id/divide_line1"
+        android:id="@+id/seperate_line"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/silver"
+        android:layout_height="0.5dp"
+        android:background="@color/pale_black"
         app:layout_constraintTop_toBottomOf="@id/toolbar"/>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/location_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        app:layout_constraintTop_toBottomOf="@id/seperate_line"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="Admiralty Secondary Shool"
+            android:textSize="16sp"
+            android:paddingStart="26dp"
+            android:paddingEnd="100dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="#333333"/>
+
+        <Button
+            android:id="@+id/expandbutton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:background="@drawable/ic_baseline_expand_more_24"
+            android:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/location"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/seperate_line2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/pale_black"
+        app:layout_constraintTop_toBottomOf="@id/location_constraint"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/fragmentContainer2"
+        app:layout_constraintTop_toBottomOf="@id/seperate_line2"
+        app:layout_constraintBottom_toTopOf="@id/nav_bar">
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/Bottom_navigationBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:itemBackground="@drawable/custom_line"
+            android:background="?android:attr/windowBackground"
+            app:itemIconTint="@color/custom_color"
+            app:itemTextColor="@color/custom_color"
+            app:menu="@menu/nav_menu"
+            tools:ignore="MissingConstraints">
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

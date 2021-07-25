@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.khind_project.MyViewPagerAdapter
 import com.example.khind_project.R
 import com.example.khind_project.fragment.Activity_2_Fragment.Notification.alert.Alert
 import com.example.khind_project.fragment.Activity_2_Fragment.Notification.message.Message
 import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.toolbar.*
 
 class Notification : Fragment() {
     lateinit var backBtn: Button
@@ -33,6 +33,10 @@ class Notification : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.toolbar?.visibility = View.GONE
+        activity?.nav_bar?.visibility = View.GONE
+        activity?.location_constraint?.visibility = View.GONE
+
         backBtn = view.findViewById(R.id.backbutton1)
         viewPage = view.findViewById(R.id.viewPager)
         tabLayout = view.findViewById(R.id.tabs)
@@ -61,10 +65,12 @@ class Notification : Fragment() {
 
 
         backBtn.setOnClickListener {
+            activity?.toolbar?.visibility = View.VISIBLE
+            activity?.nav_bar?.visibility = View.VISIBLE
+            activity?.location_constraint?.visibility = View.VISIBLE
             if(fragmentManager?.backStackEntryCount!! > 0) {
                 fragmentManager?.popBackStack("Notification", FragmentManager.POP_BACK_STACK_INCLUSIVE)
             }
         }
-
     }
 }

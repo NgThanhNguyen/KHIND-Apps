@@ -46,11 +46,13 @@ class Login : Fragment() {
 
         // Click at Login button
         btnLogin.setOnClickListener {
-            signInViewModel.signIn(username = username.text.toString(),pass = password.text.toString())!!.observe(viewLifecycleOwner, Observer {
+            signInViewModel.getToken(username.text.toString(), password.text.toString())
+
+            signInViewModel.signIn()!!.observe(viewLifecycleOwner, Observer {
                 if(it.status) {
                     Toast.makeText(this.context, "Log in successfully", Toast.LENGTH_LONG).show()
                     SharePrefRepository.putToken(it.data.token.token_id,it.data.token.refresh_token)
-                    val transaction = fragmentManager?.beginTransaction()?.apply {
+                    fragmentManager?.beginTransaction()?.apply {
                         replace(R.id.fragmentContainer, Login_screen())
                         commit()
                     }

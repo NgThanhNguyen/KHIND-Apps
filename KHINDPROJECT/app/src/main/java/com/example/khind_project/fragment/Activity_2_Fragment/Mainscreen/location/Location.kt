@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.ListView
 import androidx.fragment.app.FragmentManager
 import com.example.khind_project.R
+import kotlinx.android.synthetic.main.toolbar.*
 
 class Location : Fragment() {
     lateinit var expandBtn: Button
@@ -32,6 +33,10 @@ class Location : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.toolbar?.visibility = View.GONE
+        activity?.nav_bar?.visibility = View.GONE
+        activity?.location_constraint?.visibility = View.GONE
+
         expandBtn = view.findViewById(R.id.expand)
         listViewLocation = view.findViewById(R.id.list_location)
         Filter = view.findViewById(R.id.filter)
@@ -77,6 +82,9 @@ class Location : Fragment() {
 
 
         expandBtn.setOnClickListener {
+            activity?.toolbar?.visibility = View.VISIBLE
+            activity?.nav_bar?.visibility = View.VISIBLE
+            activity?.location_constraint?.visibility = View.VISIBLE
             if(fragmentManager?.backStackEntryCount!! > 0) {
                 fragmentManager?.popBackStack("Location", FragmentManager.POP_BACK_STACK_INCLUSIVE)
             }

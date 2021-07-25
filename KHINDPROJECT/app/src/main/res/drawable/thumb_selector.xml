@@ -3,8 +3,8 @@
     <item android:state_checked="false">
         <shape android:shape="oval">
             <solid android:color="@android:color/white" />
-            <size android:width="20dp" android:height="20dp" />
-            <stroke android:width="2dp" android:color="#0000ffff" />
+            <size android:width="28dp" android:height="28dp"/>
+            <stroke android:width="0.5dp" android:color="@color/pale_black" />
         </shape> <!-- shape circle -->
     </item>
 </selector>

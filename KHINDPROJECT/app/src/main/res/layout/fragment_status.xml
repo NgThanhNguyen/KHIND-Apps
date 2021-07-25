@@ -2,112 +2,102 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/parent"
+    android:id="@+id/status"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.Activity_2_Fragment.Mainscreen.status.Status">
 
-    <FrameLayout
-        android:id="@+id/imagecontainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </FrameLayout>
-
-    <TextView
-        android:id="@+id/text_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/rounded_rectangle_orange"
-        android:padding="10dp"
-        android:paddingStart="30dp"
-        android:paddingEnd="30dp"
-        android:text="Cloud-to-Ground lightning detected"
-        android:textAlignment="center"
-        android:textColor="#FE9700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toTopOf="@id/text_title"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
-
+        android:layout_height="match_parent">
         <ImageView
-            android:id="@+id/warning"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/warning"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="6-8km"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/imagecontainer"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/warning" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/little_orange_2"
+            tools:ignore="MissingConstraints" />
 
         <ImageView
-            android:id="@+id/alert"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/little_red_2"
+            android:background="@drawable/red_alert"
+            app:layout_constraintTop_toBottomOf="@+id/imagecontainer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="@id/warning"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintRight_toRightOf="@+id/little_orange_2"
+            android:layout_marginBottom="50dp"
+            tools:ignore="MissingConstraints"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/little_orange_2"
+            android:background="@drawable/orange_warning"
+            app:layout_constraintTop_toBottomOf="@+id/imagecontainer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="50dp"
+            tools:ignore="MissingConstraints"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/little_green_2"
+            android:background="@drawable/green_clear"
+            app:layout_constraintTop_toBottomOf="@+id/imagecontainer"
+            app:layout_constraintLeft_toLeftOf="@+id/little_orange_2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="50dp"
+            tools:ignore="MissingConstraints"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0-6km"
-            android:textSize="12sp"
-            android:textStyle="bold"
+            android:id="@+id/text_red_2"
+            app:layout_constraintTop_toBottomOf="@+id/imagecontainer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="@id/warning"
-            app:layout_constraintTop_toBottomOf="@id/warning" />
-
-        <ImageView
-            android:id="@+id/clear"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/clear"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/warning"
+            app:layout_constraintRight_toRightOf="@+id/little_orange_2"
+            tools:ignore="MissingConstraints"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6-8km"
+            android:id="@+id/text_orange_2"
+            app:layout_constraintTop_toBottomOf="@+id/imagecontainer"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="MissingConstraints"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="clear"
+            android:id="@+id/text_green_2"
+            app:layout_constraintTop_toBottomOf="@+id/imagecontainer"
+            app:layout_constraintLeft_toLeftOf="@+id/little_orange_2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="MissingConstraints"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clear"
-            android:textSize="12sp"
+            android:id="@+id/text_title"
+            android:text="Cloud-to-Ground lightning detected"
+            android:textSize="16sp"
+            android:textAlignment="center"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/warning"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/little_orange_2"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/warning" />
-
-
+            app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
